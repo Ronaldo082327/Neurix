@@ -33,10 +33,10 @@ export function NeuralBackground() {
   const createParticles = useCallback((width: number, height: number) => {
     const particles: Particle[] = [];
     const colorPalette = [
-      { hue: 262, sat: 83, light: 58 },  // violet primary
-      { hue: 195, sat: 100, light: 42 }, // cyan secondary
-      { hue: 330, sat: 80, light: 60 },  // magenta accent
-      { hue: 160, sat: 84, light: 39 },  // neural emerald
+      { hue: 168, sat: 64, light: 40 },  // bioluminescent teal
+      { hue: 192, sat: 91, light: 36 },  // deep cyan
+      { hue: 38, sat: 92, light: 50 },   // synaptic amber
+      { hue: 160, sat: 72, light: 42 },  // neural emerald
     ];
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
@@ -115,19 +115,19 @@ export function NeuralBackground() {
           x: w * 0.3 + Math.sin(time * 0.0002) * w * 0.1,
           y: h * 0.3 + Math.cos(time * 0.00015) * h * 0.1,
           r: Math.max(w, h) * 0.5,
-          color: `hsla(${262 + shift1}, 70%, 15%, 0.3)`,
+          color: `hsla(${168 + shift1}, 50%, 12%, 0.3)`,
         },
         {
           x: w * 0.7 + Math.cos(time * 0.00018) * w * 0.12,
           y: h * 0.6 + Math.sin(time * 0.00025) * h * 0.08,
           r: Math.max(w, h) * 0.45,
-          color: `hsla(${195 + shift2}, 80%, 12%, 0.25)`,
+          color: `hsla(${192 + shift2}, 70%, 10%, 0.25)`,
         },
         {
           x: w * 0.5 + Math.sin(time * 0.00012) * w * 0.15,
           y: h * 0.8 + Math.cos(time * 0.0002) * h * 0.1,
           r: Math.max(w, h) * 0.4,
-          color: `hsla(${330 + shift3}, 60%, 14%, 0.2)`,
+          color: `hsla(${38 + shift3}, 50%, 12%, 0.15)`,
         },
       ];
 
@@ -146,7 +146,7 @@ export function NeuralBackground() {
 
       for (let wave = 0; wave < 3; wave++) {
         const baseY = h * (0.3 + wave * 0.15);
-        const hues = [262, 195, 330];
+        const hues = [168, 192, 38];
         const hue = hues[wave];
 
         ctx.beginPath();
@@ -300,7 +300,7 @@ export function NeuralBackground() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 30%, transparent 0%, hsla(252, 20%, 4%, 0.4) 50%, hsla(252, 20%, 4%, 0.85) 100%)",
+            "radial-gradient(ellipse at 50% 30%, transparent 0%, hsla(200, 25%, 3.5%, 0.4) 50%, hsla(200, 25%, 3.5%, 0.85) 100%)",
         }}
       />
     </div>

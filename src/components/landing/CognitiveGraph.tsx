@@ -34,17 +34,17 @@ interface Particle {
 const DISCIPLINES_DATA = [
   {
     name: "Direito Constitucional",
-    color: "147, 103, 245",
+    color: "20, 184, 166",
     topics: ["Direitos Fundamentais", "Organização do Estado", "Controle de Constitucionalidade", "Poder Legislativo", "Poder Executivo", "Remédios Constitucionais", "Princípios Fundamentais"],
   },
   {
     name: "Português",
-    color: "200, 80, 255",
+    color: "6, 182, 212",
     topics: ["Interpretação de Texto", "Concordância Verbal", "Regência", "Crase", "Pontuação", "Coesão e Coerência", "Classes de Palavras"],
   },
   {
     name: "Raciocínio Lógico",
-    color: "0, 195, 255",
+    color: "245, 158, 11",
     topics: ["Proposições", "Equivalências Lógicas", "Probabilidade", "Análise Combinatória", "Sequências", "Diagramas Lógicos"],
   },
   {
@@ -59,7 +59,7 @@ const DISCIPLINES_DATA = [
   },
   {
     name: "Direito Penal",
-    color: "235, 80, 140",
+    color: "16, 185, 129",
     topics: ["Crimes contra a Pessoa", "Teoria da Pena", "Tipicidade", "Ilicitude", "Culpabilidade", "Crimes contra o Patrimônio", "Lei de Drogas"],
   },
   {
@@ -88,7 +88,7 @@ function buildGraph(w: number, h: number) {
     y: cy + (Math.random() - 0.5) * 20,
     vx: 0, vy: 0,
     radius: 30,
-    color: "147, 103, 245",
+    color: "20, 184, 166",
     type: "brain",
     pulsePhase: 0,
     mass: 8,

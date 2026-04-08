@@ -40,7 +40,7 @@ export function FormulaCard({ icon: Icon, title, formula, variables, explanation
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
       >
-        <pre className="text-sm md:text-base font-mono text-primary font-bold whitespace-pre-wrap leading-relaxed drop-shadow-[0_0_8px_hsl(262_83%_58%/0.3)]">
+        <pre className="text-sm md:text-base font-mono text-primary font-bold whitespace-pre-wrap leading-relaxed drop-shadow-[0_0_8px_hsl(168_64%_40%/0.3)]">
           {formula}
         </pre>
       </motion.div>

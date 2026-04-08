@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import neurixIcon from "@/assets/neurix-icon-new.png";
+import { NeurixLogo } from "@/components/NeurixLogo";
 
 export function FooterSection() {
   return (
@@ -14,7 +14,7 @@ export function FooterSection() {
           {/* Logo + tagline */}
           <div className="flex flex-col items-center gap-2">
             <div className="flex items-center gap-2">
-              <img src={neurixIcon} alt="NEURIX" className="h-8 w-8 rounded-lg" />
+              <NeurixLogo size={32} animated={false} />
               <span className="font-display text-xl font-bold gradient-text">NEURIX</span>
             </div>
             <p className="text-xs text-muted-foreground tracking-wide">

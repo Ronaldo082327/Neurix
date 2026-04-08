@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import neurixLogo from "@/assets/neurix-icon-new.png";
+import { NeurixLogo } from "@/components/NeurixLogo";
 
 const navLinks = [
   { href: "#funcionalidades", label: "Funcionalidades" },
@@ -44,22 +44,14 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass-strong shadow-lg shadow-violet-500/5" : "bg-transparent"
+        scrolled ? "glass-strong shadow-lg shadow-teal-500/5" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
-            <div className="relative">
-              <img
-                src={neurixLogo}
-                alt="Neurix"
-                className="h-8 w-8 object-contain"
-              />
-              {/* Pulsing glow dot */}
-              <span className="absolute -top-0.5 -right-0.5 h-2 w-2 rounded-full bg-violet-400 animate-pulse shadow-[0_0_8px_2px_hsla(262,83%,58%,0.6)]" />
-            </div>
+            <NeurixLogo size={36} animated={false} />
             <span className="font-display text-xl font-bold tracking-wider gradient-text">
               NEURIX
             </span>
@@ -75,7 +67,7 @@ export function Navbar() {
               >
                 {link.label}
                 {/* Underline animation expanding from center */}
-                <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-gradient-to-r from-violet-500 via-cyan-400 to-fuchsia-500 transition-all duration-300 group-hover:w-3/4 rounded-full" />
+                <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-gradient-to-r from-teal-400 via-cyan-400 to-amber-400 transition-all duration-300 group-hover:w-3/4 rounded-full" />
               </a>
             ))}
           </div>
@@ -90,7 +82,7 @@ export function Navbar() {
             <Link to="/registro">
               <Button
                 variant="default"
-                className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300"
+                className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white border-0 shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 transition-all duration-300"
               >
                 Criar conta
               </Button>
@@ -145,7 +137,7 @@ export function Navbar() {
                 <Link to="/registro" onClick={() => setIsOpen(false)}>
                   <Button
                     variant="default"
-                    className="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0"
+                    className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white border-0"
                   >
                     Criar conta
                   </Button>
@@ -163,7 +155,7 @@ export function Navbar() {
           style={{
             width: `${scrollProgress * 100}%`,
             background:
-              "linear-gradient(90deg, hsl(262 83% 58%), hsl(195 100% 42%), hsl(330 80% 60%))",
+              "linear-gradient(90deg, hsl(168 64% 40%), hsl(192 91% 36%), hsl(38 92% 50%))",
           }}
           transition={{ duration: 0.1 }}
         />

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight, Brain, Zap, Target, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NeuralBackground } from "./NeuralBackground";
-import neurixLogo from "@/assets/neurix-logo-new.png";
+import { NeurixLogo } from "@/components/NeurixLogo";
 
 const cards = [
   {
@@ -116,7 +116,7 @@ export function HeroSection() {
           >
             <Button variant="hero" size="lg" className="text-base px-8 py-6" asChild>
               <Link to="/registro">
-                <img src={neurixLogo} alt="" className="h-5 w-5 mr-2" />
+                <NeurixLogo size={22} animated={false} className="mr-2" />
                 Começar Gratuitamente
               </Link>
             </Button>

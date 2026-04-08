@@ -39,7 +39,7 @@ export function CognitiveGraphWidget() {
           <div className="text-center">
             <div className="relative h-16 w-16 mx-auto mb-1">
               <svg viewBox="0 0 36 36" className="h-full w-full -rotate-90">
-                <circle cx="18" cy="18" r="15.5" fill="none" stroke="hsl(228, 15%, 18%)" strokeWidth="3" />
+                <circle cx="18" cy="18" r="15.5" fill="none" stroke="hsl(200, 15%, 16%)" strokeWidth="3" />
                 <circle
                   cx="18" cy="18" r="15.5" fill="none"
                   stroke={masteryColor(stats.avg_mastery)}
@@ -57,7 +57,7 @@ export function CognitiveGraphWidget() {
           <div className="text-center">
             <div className="relative h-16 w-16 mx-auto mb-1">
               <svg viewBox="0 0 36 36" className="h-full w-full -rotate-90">
-                <circle cx="18" cy="18" r="15.5" fill="none" stroke="hsl(228, 15%, 18%)" strokeWidth="3" />
+                <circle cx="18" cy="18" r="15.5" fill="none" stroke="hsl(200, 15%, 16%)" strokeWidth="3" />
                 <circle
                   cx="18" cy="18" r="15.5" fill="none"
                   stroke={retentionPercent >= 70 ? "rgb(96, 165, 250)" : "rgb(248, 113, 113)"}

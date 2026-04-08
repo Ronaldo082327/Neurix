@@ -30,7 +30,7 @@ const categoryIcons: Record<string, React.ReactNode> = {
   flashcard: <Layers className="h-4 w-4 text-emerald-400" />,
   question: <HelpCircle className="h-4 w-4 text-orange-400" />,
   protocol: <CalendarClock className="h-4 w-4 text-pink-400" />,
-  obsidian_sync: <BookOpen className="h-4 w-4 text-violet-400" />,
+  obsidian_sync: <BookOpen className="h-4 w-4 text-teal-400" />,
 };
 
 const categoryLabels: Record<string, string> = {
@@ -123,7 +123,7 @@ export default function CentroTarefasPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
+          <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center">
             <ListTodo className="h-6 w-6 text-white" />
           </div>
           <div>
@@ -136,7 +136,7 @@ export default function CentroTarefasPage() {
 
         <Dialog open={newTaskOpen} onOpenChange={setNewTaskOpen}>
           <DialogTrigger asChild>
-            <Button className="gap-2 bg-gradient-to-r from-violet-500 to-purple-600">
+            <Button className="gap-2 bg-gradient-to-r from-teal-500 to-teal-600">
               <Plus className="h-4 w-4" />
               Nova Tarefa
             </Button>

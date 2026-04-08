@@ -14,10 +14,10 @@ const fadeUp = {
 };
 
 const cardHover = {
-  rest: { scale: 1, borderColor: "hsl(252 12% 14% / 0.6)" },
+  rest: { scale: 1, borderColor: "hsl(200 12% 13% / 0.6)" },
   hover: {
     scale: 1.02,
-    borderColor: "hsl(262 83% 58% / 0.4)",
+    borderColor: "hsl(168 64% 40% / 0.4)",
     transition: { duration: 0.25 },
   },
 };
@@ -331,9 +331,9 @@ export function ScienceSection() {
                 className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shrink-0"
                 animate={{
                   boxShadow: [
-                    "0 0 0px hsl(262 83% 58% / 0)",
-                    "0 0 20px hsl(262 83% 58% / 0.35)",
-                    "0 0 0px hsl(262 83% 58% / 0)",
+                    "0 0 0px hsl(168 64% 40% / 0)",
+                    "0 0 20px hsl(168 64% 40% / 0.35)",
+                    "0 0 0px hsl(168 64% 40% / 0)",
                   ],
                 }}
                 transition={{ duration: 3, repeat: Infinity }}

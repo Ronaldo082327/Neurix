@@ -71,9 +71,9 @@ export default function DesempenhoPage() {
           <h3 className="font-semibold mb-4 flex items-center gap-2"><BarChart3 className="h-4 w-4 text-primary" />Perfil Cognitivo</h3>
           <ResponsiveContainer width="100%" height={280}>
             <RadarChart data={radarData}>
-              <PolarGrid stroke="hsl(228, 15%, 18%)" />
+              <PolarGrid stroke="hsl(200, 15%, 16%)" />
               <PolarAngleAxis dataKey="subject" tick={{ fill: "hsl(215, 20%, 55%)", fontSize: 11 }} />
-              <Radar dataKey="score" stroke="hsl(217, 91%, 60%)" fill="hsl(217, 91%, 60%)" fillOpacity={0.2} strokeWidth={2} />
+              <Radar dataKey="score" stroke="hsl(168, 64%, 40%)" fill="hsl(168, 64%, 40%)" fillOpacity={0.2} strokeWidth={2} />
             </RadarChart>
           </ResponsiveContainer>
         </div>
@@ -81,11 +81,11 @@ export default function DesempenhoPage() {
           <h3 className="font-semibold mb-4 flex items-center gap-2"><TrendingUp className="h-4 w-4 text-primary" />Evolução Semanal</h3>
           <ResponsiveContainer width="100%" height={280}>
             <LineChart data={evolutionData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(228, 15%, 18%)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(200, 15%, 16%)" />
               <XAxis dataKey="sem" tick={{ fill: "hsl(215, 20%, 55%)", fontSize: 12 }} axisLine={false} />
               <YAxis domain={[0, 100]} tick={{ fill: "hsl(215, 20%, 55%)", fontSize: 12 }} axisLine={false} />
-              <Tooltip contentStyle={{ background: "hsl(228, 15%, 10%)", border: "1px solid hsl(228, 15%, 18%)", borderRadius: "8px", color: "hsl(210, 40%, 96%)" }} />
-              <Line type="monotone" dataKey="acerto" stroke="hsl(270, 60%, 55%)" strokeWidth={2} dot={{ fill: "hsl(270, 60%, 55%)" }} />
+              <Tooltip contentStyle={{ background: "hsl(200, 20%, 8%)", border: "1px solid hsl(200, 15%, 16%)", borderRadius: "8px", color: "hsl(210, 40%, 96%)" }} />
+              <Line type="monotone" dataKey="acerto" stroke="hsl(168, 64%, 40%)" strokeWidth={2} dot={{ fill: "hsl(168, 64%, 40%)" }} />
             </LineChart>
           </ResponsiveContainer>
         </div>

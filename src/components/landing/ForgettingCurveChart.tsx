@@ -9,10 +9,10 @@ const INNER_W = CHART_W - PAD.left - PAD.right;
 const INNER_H = CHART_H - PAD.top - PAD.bottom;
 
 const REVIEWS = [
-  { label: "Sem revisão", stability: 1, color: "hsl(330 80% 60%)" },
+  { label: "Sem revisão", stability: 1, color: "hsl(38 92% 50%)" },
   { label: "1ª revisão", stability: 2.5, color: "hsl(42 95% 55%)" },
   { label: "2ª revisão", stability: 6.25, color: "hsl(195 100% 42%)" },
-  { label: "3ª revisão", stability: 15.6, color: "hsl(262 83% 58%)" },
+  { label: "3ª revisão", stability: 15.6, color: "hsl(168 64% 40%)" },
   { label: "4ª revisão", stability: 39, color: "hsl(160 84% 39%)" },
 ];
 
@@ -131,7 +131,7 @@ export function ForgettingCurveChart() {
                 y1={y}
                 x2={PAD.left + INNER_W}
                 y2={y}
-                stroke="hsl(252 12% 14%)"
+                stroke="hsl(200 12% 13%)"
                 strokeWidth={0.5}
                 strokeDasharray={v === 0 || v === 100 ? "0" : "4 3"}
               />
@@ -145,7 +145,7 @@ export function ForgettingCurveChart() {
           const x = PAD.left + (d / MAX_DAYS) * INNER_W;
           return (
             <g key={`x-${d}`}>
-              <line x1={x} y1={PAD.top} x2={x} y2={PAD.top + INNER_H} stroke="hsl(252 12% 14%)" strokeWidth={0.5} strokeDasharray="4 3" />
+              <line x1={x} y1={PAD.top} x2={x} y2={PAD.top + INNER_H} stroke="hsl(200 12% 13%)" strokeWidth={0.5} strokeDasharray="4 3" />
               <text x={x} y={PAD.top + INNER_H + 16} textAnchor="middle" fill="hsl(230 15% 50%)" fontSize={10} fontFamily="monospace">
                 {d}d
               </text>
@@ -220,7 +220,7 @@ export function ForgettingCurveChart() {
                   cy={interactiveReviewPoint.y} 
                   r={6} 
                   fill="hsl(160 84% 39%)" 
-                  stroke="hsl(252 20% 4%)" 
+                  stroke="hsl(200 25% 3.5%)" 
                   strokeWidth={2} 
                 />
                 <motion.circle
@@ -306,7 +306,7 @@ export function ForgettingCurveChart() {
                       cy={targetY}
                       r={5} 
                       fill={REVIEWS[i].color} 
-                      stroke="hsl(252 20% 4%)" 
+                      stroke="hsl(200 25% 3.5%)" 
                       strokeWidth={2} 
                     />
                     <motion.circle

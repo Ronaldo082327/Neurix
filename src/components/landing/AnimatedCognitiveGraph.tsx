@@ -49,13 +49,13 @@ const edges: GraphEdge[] = [
 function getMasteryColor(mastery: number): string {
   if (mastery >= 0.7) return "hsl(160 84% 39%)";
   if (mastery >= 0.5) return "hsl(42 95% 55%)";
-  return "hsl(330 80% 60%)";
+  return "hsl(38 92% 50%)";
 }
 
 function getMasteryGlow(mastery: number): string {
   if (mastery >= 0.7) return "hsl(160 84% 39% / 0.4)";
   if (mastery >= 0.5) return "hsl(42 95% 55% / 0.4)";
-  return "hsl(330 80% 60% / 0.4)";
+  return "hsl(38 92% 50% / 0.4)";
 }
 
 function getMasteryLabel(mastery: number): string {
@@ -115,7 +115,7 @@ export function AnimatedCognitiveGraph() {
           </filter>
           <filter id="glow-red">
             <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-            <feFlood floodColor="hsl(330 80% 60%)" floodOpacity="0.6" result="glowColor" />
+            <feFlood floodColor="hsl(38 92% 50%)" floodOpacity="0.6" result="glowColor" />
             <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow" />
             <feMerge>
               <feMergeNode in="softGlow" />
@@ -124,7 +124,7 @@ export function AnimatedCognitiveGraph() {
           </filter>
           <filter id="glow-blue">
             <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
-            <feFlood floodColor="hsl(262 83% 58%)" floodOpacity="0.5" result="glowColor" />
+            <feFlood floodColor="hsl(168 64% 40%)" floodOpacity="0.5" result="glowColor" />
             <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow" />
             <feMerge>
               <feMergeNode in="softGlow" />
@@ -132,8 +132,8 @@ export function AnimatedCognitiveGraph() {
             </feMerge>
           </filter>
           <radialGradient id="bg-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="hsl(262 83% 58%)" stopOpacity="0.03" />
-            <stop offset="100%" stopColor="hsl(262 83% 58%)" stopOpacity="0" />
+            <stop offset="0%" stopColor="hsl(168 64% 40%)" stopOpacity="0.03" />
+            <stop offset="100%" stopColor="hsl(168 64% 40%)" stopOpacity="0" />
           </radialGradient>
         </defs>
 
@@ -157,7 +157,7 @@ export function AnimatedCognitiveGraph() {
                 y1={from.y}
                 x2={to.x}
                 y2={to.y}
-                stroke={isHighlighted ? "hsl(217 91% 60%)" : "hsl(252 12% 20%)"}
+                stroke={isHighlighted ? "hsl(168 64% 40%)" : "hsl(200 12% 18%)"}
                 strokeWidth={isHighlighted ? 0.6 : 0.3}
                 strokeOpacity={isDimmed ? 0.1 : isHighlighted ? 0.9 : 0.35}
                 initial={{ pathLength: 0, opacity: 0 }}
@@ -172,7 +172,7 @@ export function AnimatedCognitiveGraph() {
                   y1={from.y}
                   x2={to.x}
                   y2={to.y}
-                  stroke="hsl(262 83% 58%)"
+                  stroke="hsl(168 64% 40%)"
                   strokeWidth={1.2}
                   strokeOpacity={0.15}
                   filter="url(#glow-blue)"
@@ -194,7 +194,7 @@ export function AnimatedCognitiveGraph() {
               {/* Primary pulse */}
               <motion.circle
                 r={0.7}
-                fill="hsl(262 83% 58%)"
+                fill="hsl(168 64% 40%)"
                 filter="url(#glow-blue)"
                 initial={{ cx: from.x, cy: from.y, opacity: 0 }}
                 animate={{
@@ -213,7 +213,7 @@ export function AnimatedCognitiveGraph() {
               {/* Secondary reverse pulse */}
               <motion.circle
                 r={0.4}
-                fill="hsl(262 83% 70%)"
+                fill="hsl(168 64% 52%)"
                 initial={{ cx: to.x, cy: to.y, opacity: 0 }}
                 animate={{
                   cx: [to.x, from.x],
@@ -359,7 +359,7 @@ export function AnimatedCognitiveGraph() {
                   x={node.x}
                   y={node.y + 0.8}
                   textAnchor="middle"
-                  fill="hsl(252 20% 4%)"
+                  fill="hsl(200 25% 3.5%)"
                   fontSize={node.category === "root" ? 2.4 : 1.8}
                   fontWeight={700}
                   opacity={isDimmed ? 0.15 : 1}
@@ -436,7 +436,7 @@ export function AnimatedCognitiveGraph() {
         {[
           { color: "hsl(160 84% 39%)", label: "Dominado (>70%)" },
           { color: "hsl(42 95% 55%)", label: "Em progresso" },
-          { color: "hsl(330 80% 60%)", label: "Revisar (<50%)" },
+          { color: "hsl(38 92% 50%)", label: "Revisar (<50%)" },
         ].map((item) => (
           <div key={item.label} className="flex items-center gap-1.5">
             <motion.div

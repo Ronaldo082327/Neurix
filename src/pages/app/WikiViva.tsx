@@ -187,7 +187,7 @@ export default function WikiVivaPage() {
             <p className="text-xs text-muted-foreground">Conceitos</p>
           </CardContent>
         </Card>
-        <Card className="bg-gradient-to-br from-purple-500/5 to-violet-600/5 border-purple-500/20">
+        <Card className="bg-gradient-to-br from-purple-500/5 to-teal-600/5 border-purple-500/20">
           <CardContent className="p-4">
             <p className="text-2xl font-bold">{stats.aiGenerated}</p>
             <p className="text-xs text-muted-foreground">Gerados por IA</p>

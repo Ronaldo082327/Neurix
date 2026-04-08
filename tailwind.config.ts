@@ -66,7 +66,8 @@ export default {
           blue: "hsl(var(--neural-blue))",
           purple: "hsl(var(--neural-purple))",
           cyan: "hsl(var(--neural-cyan))",
-          magenta: "hsl(var(--neural-magenta))",
+          teal: "hsl(var(--neural-teal))",
+          amber: "hsl(var(--neural-amber))",
           emerald: "hsl(var(--neural-emerald))",
         },
         success: {

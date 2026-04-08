@@ -39,7 +39,7 @@ const phases = [
   {
     id: "observe",
     icon: Eye,
-    color: "from-purple-500 to-violet-400",
+    color: "from-purple-500 to-teal-400",
     title: "2. Observação & Eventos Cognitivos",
     subtitle: "Cada interação é um sinal",
     description:
@@ -117,7 +117,7 @@ const architectureFeatures = [
 function TimelineDot({ delay }: { delay: number }) {
   return (
     <motion.div
-      className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_hsl(262_83%_58%/0.6)]"
+      className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_hsl(168_64%_40%/0.6)]"
       initial={{ top: "0%", opacity: 0 }}
       animate={{ top: "100%", opacity: [0, 1, 1, 0] }}
       transition={{
