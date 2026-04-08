@@ -1,0 +1,7 @@
+project_id = "lvjjcmfxshnsawgbtkcq"
+
+[functions.coach-chat]
+verify_jwt = false
+
+[functions.generate-study-content]
+verify_jwt = false

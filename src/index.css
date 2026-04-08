@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 252 20% 4%;
+    --foreground: 220 40% 96%;
+
+    --card: 252 18% 8%;
+    --card-foreground: 220 40% 96%;
+
+    --popover: 252 18% 8%;
+    --popover-foreground: 220 40% 96%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 195 100% 42%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 252 15% 14%;
+    --muted-foreground: 230 15% 50%;
+
+    --accent: 330 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 252 12% 14%;
+    --input: 252 12% 14%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.875rem;
+
+    --sidebar-background: 252 20% 5%;
+    --sidebar-foreground: 220 30% 85%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 252 15% 12%;
+    --sidebar-accent-foreground: 220 30% 85%;
+    --sidebar-border: 252 12% 12%;
+    --sidebar-ring: 262 83% 58%;
+
+    /* Neural palette */
+    --neural-blue: 210 100% 60%;
+    --neural-purple: 262 83% 58%;
+    --neural-cyan: 185 100% 50%;
+    --neural-magenta: 330 80% 60%;
+    --neural-emerald: 160 84% 39%;
+    --neural-glow: 262 83% 58%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+    --warning: 42 95% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Aurora gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(195 100% 42%));
+    --gradient-neural: linear-gradient(135deg, hsl(262 83% 58%), hsl(195 100% 50%), hsl(160 84% 39%));
+    --gradient-aurora: linear-gradient(135deg, hsl(262 83% 58%), hsl(330 80% 60%), hsl(195 100% 50%));
+    --gradient-card: linear-gradient(145deg, hsl(252 18% 10%), hsl(252 20% 5%));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(262 83% 58% / 0.12), transparent 70%);
+    --gradient-warm: linear-gradient(135deg, hsl(330 80% 60%), hsl(42 95% 55%));
+
+    --shadow-glow: 0 0 40px -8px hsl(262 83% 58% / 0.35);
+    --shadow-glow-cyan: 0 0 40px -8px hsl(195 100% 50% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.5);
+    --shadow-elevated: 0 16px 48px -12px hsl(0 0% 0% / 0.6);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(252 20% 4%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(252 15% 18%);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(262 83% 58% / 0.5);
+  }
+
+  /* Selection color */
+  ::selection {
+    background: hsl(262 83% 58% / 0.3);
+    color: hsl(220 40% 96%);
+  }
+}
+
+@layer utilities {
+  /* --- Text gradients --- */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-neural-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-neural);
+  }
+
+  .gradient-aurora-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-aurora);
+  }
+
+  .gradient-warm-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-warm);
+  }
+
+  /* --- Background gradients --- */
+  .gradient-primary-bg {
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-neural-bg {
+    background-image: var(--gradient-neural);
+  }
+
+  .gradient-aurora-bg {
+    background-image: var(--gradient-aurora);
+  }
+
+  .gradient-card-bg {
+    background-image: var(--gradient-card);
+  }
+
+  /* --- Glow effects --- */
+  .glow-purple {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-blue {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-cyan {
+    box-shadow: var(--shadow-glow-cyan);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 24px hsl(262 83% 58% / 0.5);
+  }
+
+  .glow-text-cyan {
+    text-shadow: 0 0 24px hsl(195 100% 50% / 0.5);
+  }
+
+  /* --- Glassmorphism --- */
+  .glass {
+    @apply backdrop-blur-xl border border-white/[0.06];
+    background: hsl(252 18% 8% / 0.6);
+  }
+
+  .glass-strong {
+    @apply backdrop-blur-2xl border border-white/[0.08];
+    background: hsl(252 18% 8% / 0.85);
+  }
+
+  .glass-subtle {
+    @apply backdrop-blur-lg border border-white/[0.04];
+    background: hsl(252 18% 8% / 0.4);
+  }
+
+  /* --- Neural grid --- */
+  .neural-grid {
+    background-image:
+      linear-gradient(hsl(252 15% 12% / 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(252 15% 12% / 0.4) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  /* --- Grain texture (Neurodesign: adds depth, reduces flatness fatigue) --- */
+  .grain {
+    position: relative;
+  }
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: inherit;
+  }
+
+  /* --- Shimmer effect (Neurodesign: draws attention via motion) --- */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(262 83% 70% / 0.08) 50%,
+      transparent 100%
+    );
+    animation: shimmer-slide 3s ease-in-out infinite;
+  }
+
+  /* --- Aurora border (Neurodesign: animated borders feel alive) --- */
+  .border-aurora {
+    position: relative;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+  .border-aurora::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      hsl(262 83% 58% / 0.4),
+      hsl(195 100% 50% / 0.3),
+      hsl(330 80% 60% / 0.3),
+      hsl(262 83% 58% / 0.4)
+    );
+    background-size: 300% 300%;
+    animation: aurora-border 6s ease infinite;
+    z-index: -1;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    padding: 1px;
+    border-radius: inherit;
+  }
+
+  /* --- Floating label (Neurodesign: badge styling) --- */
+  .neuro-badge {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold;
+    background: hsl(262 83% 58% / 0.1);
+    color: hsl(262 83% 70%);
+    border: 1px solid hsl(262 83% 58% / 0.2);
+  }
+
+  /* --- Card with hover lift (Neurodesign: reward on interaction) --- */
+  .neuro-card {
+    @apply rounded-2xl border border-white/[0.06] p-6;
+    background: hsl(252 18% 8% / 0.6);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .neuro-card:hover {
+    border-color: hsl(262 83% 58% / 0.3);
+    transform: translateY(-4px);
+    box-shadow:
+      0 12px 40px -12px hsl(262 83% 58% / 0.15),
+      0 0 0 1px hsl(262 83% 58% / 0.1);
+  }
+
+  /* --- Section divider --- */
+  .section-glow {
+    position: relative;
+  }
+  .section-glow::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(262 83% 58% / 0.3), transparent);
+  }
+
+  /* --- Display font --- */
+  .font-display {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* === Keyframe Animations === */
+@keyframes shimmer-slide {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+@keyframes aurora-border {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(0.5deg); }
+  66% { transform: translateY(-4px) rotate(-0.5deg); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes text-reveal {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
